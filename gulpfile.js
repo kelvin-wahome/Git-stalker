@@ -6,3 +6,10 @@ var source = require('vinyl-source-stream');
 gulp.task('myTask', function(){
   console.log('hello gulp');
 });
+
+gulp.task('jsBrowserify', function() {
+  return browserify({ entries: ['./js/pingpong-interface.js'] })
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/js'));
+});
