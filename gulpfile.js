@@ -8,7 +8,7 @@ gulp.task('myTask', function(){
 });
 
 gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/*.js'] })
+  return browserify({ entries: ['./js/gitstalker.js'] })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
