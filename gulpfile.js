@@ -8,7 +8,7 @@ gulp.task('myTask', function(){
 });
 
 gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/pingpong-interface.js'] })
+  return browserify({ entries: ['./js/*.js'] })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
