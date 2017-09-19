@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var del = require('del');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
@@ -29,6 +30,11 @@ gulp.task('concatInterface', function() {
     .pipe(concat('allConcat.js'))
     .pipe(gulp.dest('./tmp'));
 });
+
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
 
 
 
