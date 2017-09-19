@@ -4,6 +4,8 @@ var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var uglify = require ('gulp-uglify');
 var utilities = require ('gulp-util');
+var buildProduction = utilities.env.production;
+
 
 gulp.task('myTask', function(){
   console.log('hello gulp');
@@ -26,4 +28,15 @@ gulp.task('concatInterface', function() {
   return gulp.src(['./js/pingpong-interface.js', './js/signup-interface.js'])
     .pipe(concat('allConcat.js'))
     .pipe(gulp.dest('./tmp'));
+});
+
+
+
+
+gulp.task("build", function(){
+  if (buildProduction) {
+    gulp.start('minifyScripts');
+  } else {
+    gulp.start('jsBrowserify');
+  }
 });
