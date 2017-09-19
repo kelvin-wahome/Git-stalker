@@ -1,0 +1,20 @@
+{
+  "name": "gitstalker",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kelvin-wahome <wahomekelving@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
